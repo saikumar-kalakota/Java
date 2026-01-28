@@ -35,6 +35,21 @@ public class Main {
         System.out.println("Reverse order");
         System.out.println(Arrays.toString(intArr));
 
+        String str= reverseString("Monalisa");
+        System.out.println("Reversed string "+ str);
+    }
+    
+    public static String reverseString(String str){
+        
+        char [] arr= str.toCharArray();
+        StringBuilder reverseStr = new StringBuilder();
+        for(int i=arr.length-1; i>=0; i--) {
+            char c= arr[i];
+            reverseStr.append(c);
 
+        }
+
+        System.out.println(reverseStr);
+        return reverseStr.toString();
     }
     }
