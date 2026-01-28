@@ -60,8 +60,8 @@ public class Main {
         return new String(a)
                 .chars()
                 .mapToObj(c-> (char) c)
-                .distinct()
-                .sorted()
+//                .distinct() //optional
+//                .sorted() //optional
                 .toArray(Character[]::new);
     }
     }
