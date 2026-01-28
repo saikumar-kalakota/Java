@@ -57,13 +57,11 @@ public class Main {
     }
 
     static Character [] convertToCharacterArray(char [] a){
-
-        Character [] arr = new String(a)
-                                .chars()
-                                .mapToObj(c-> (char) c)
-                                .distinct()
-                                .sorted()
-                                .toArray(Character[]::new);
-        return arr;
+        return new String(a)
+                .chars()
+                .mapToObj(c-> (char) c)
+                .distinct()
+                .sorted()
+                .toArray(Character[]::new);
     }
     }
