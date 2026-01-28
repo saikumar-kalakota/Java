@@ -37,6 +37,11 @@ public class Main {
 
         String str= reverseString("Monalisa");
         System.out.println("Reversed string "+ str);
+
+        char [] a= {'a', 'e', 'i', 'o','s','a', 'u', 'b'};
+
+        Character [] charArr = convertToCharacterArray(a);
+        System.out.println(Arrays.asList(charArr));
     }
     
     public static String reverseString(String str){
@@ -46,10 +51,19 @@ public class Main {
         for(int i=arr.length-1; i>=0; i--) {
             char c= arr[i];
             reverseStr.append(c);
-
         }
-
         System.out.println(reverseStr);
         return reverseStr.toString();
+    }
+
+    static Character [] convertToCharacterArray(char [] a){
+
+        Character [] arr = new String(a)
+                                .chars()
+                                .mapToObj(c-> (char) c)
+                                .distinct()
+                                .sorted()
+                                .toArray(Character[]::new);
+        return arr;
     }
     }
