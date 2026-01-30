@@ -1,5 +1,6 @@
 import java.util.Arrays;
 import java.util.*;
+import java.util.stream.IntStream;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
@@ -47,6 +48,13 @@ public class Main {
         System.out.println(Arrays.asList(charArr));
 
         sortArrays();
+        int [] arr2 = new int [7];
+        arr2= new int[] {1, 5,3,44,6,33,3};
+        int [] mergedPrimitiveIntsArray= mergeArrays(arr, arr2);
+        System.out.println(Arrays.toString(mergedPrimitiveIntsArray));
+        int[] array = Arrays.stream(mergedPrimitiveIntsArray).distinct().toArray();
+        System.out.println(Arrays.toString(array));
+
     }
     
     public static String reverseString(String str){
@@ -88,4 +96,15 @@ public class Main {
         System.out.println("Desc order sort using Collections.sort(list, Comparator.comparingInt(Integer::intValue).reversed()) " +lstArr );
     }
 
+    /**
+     *
+     * @param a array of primitive integers
+     * @param b array of primitive integers
+     * @return array of primitive integers
+     */
+
+    static int [] mergeArrays(int [] a, int [] b){
+        int [] mergedArray= IntStream.concat(Arrays.stream(a) , Arrays.stream(b)).toArray();
+        return mergedArray ;
+    }
     }
