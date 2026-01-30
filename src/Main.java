@@ -106,7 +106,7 @@ public class Main {
         System.out.println("Asc order sort using Collections.sort(list) " + lstArr);
 
         Collections.sort(lstArr, Comparator.comparingInt(Integer::intValue).reversed());
-        System.out.println("Desc order sort using Collections.sort(list, Comparator.comparingInt(Integer::intValue).reversed()) " + lstArr);
+        System.out.println("Desc order sort using :" +" Collections.sort(list, Comparator.comparingInt(Integer::intValue).reversed()) " + lstArr);
     }
 
     /**
